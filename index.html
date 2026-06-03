@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Security Simulation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:#00ff88;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    background:#161b22;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(0,255,136,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.warning{
+    background:#2d1a1a;
+    color:#ff7b7b;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    text-align:center;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00ff88;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.progress-container{
+    width:100%;
+    background:#333;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    display:none;
+}
+
+.progress-bar{
+    width:0%;
+    height:25px;
+    background:#00ff88;
+    transition:width 0.3s;
+}
+
+.logs{
+    margin-top:20px;
+    background:#0b0f14;
+    padding:15px;
+    border-radius:10px;
+    min-height:180px;
+    overflow:auto;
+    display:none;
+}
+
+.log{
+    margin-bottom:8px;
+}
+
+.result{
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
+    display:none;
+    background:#1f2937;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>VPOS INSTAGRAM or FACEBOOK Account Breaking.</h1>
+
+    <div class="warning">
+        This Site Made by Adem Chebbi X hacking tool.
+    </div>
+
+    <input type="text" id="username" placeholder="Enter a public username to be hacked">
+
+    <button onclick="startSimulation()">
+        Start Hacking Directly VPOS
+    </button>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="logs" id="logs"></div>
+
+    <div class="result" id="result"></div>
+
+</div>
+
+<script>
+
+function startSimulation(){
+
+    const username = document.getElementById("username").value.trim();
+
+    if(username === ""){
+        alert("Please enter a username.");
+        return;
+    }
+
+    const progressBar = document.getElementById("progressBar");
+    const progressContainer = document.getElementById("progressContainer");
+    const logs = document.getElementById("logs");
+    const result = document.getElementById("result");
+
+    progressContainer.style.display = "block";
+    logs.style.display = "block";
+    result.style.display = "none";
+
+    progressBar.style.width = "0%";
+    logs.innerHTML = "";
+
+    const messages = [
+        "Initializing educational security scan...",
+        "Collecting publicly available profile information...",
+        "Checking privacy settings visibility...",
+        "Analyzing account exposure risks...",
+        "Reviewing password security recommendations...",
+        "Checking for common phishing vulnerabilities...",
+        "Generating awareness report...",
+        "Simulation complete."
+    ];
+
+    let progress = 0;
+    let step = 0;
+
+    const interval = setInterval(() => {
+
+        progress += 12.5;
+        progressBar.style.width = progress + "%";
+
+        if(step < messages.length){
+            logs.innerHTML += `<div class="log">> ${messages[step]}</div>`;
+            logs.scrollTop = logs.scrollHeight;
+            step++;
+        }
+
+        if(progress >= 100){
+
+            clearInterval(interval);
+
+            result.style.display = "block";
+
+            result.innerHTML = `
+                <h3>Simulation Report</h3>
+                <br>
+                <p><strong>Username:</strong> ${username}</p>
+                <p><strong>Status:</strong> Educational simulation completed.</p>
+                <br>
+                <p>
+                No real account access occurred.
+                No passwords were checked.
+                No Facebook systems were contacted.
+                </p>
+                <br>
+                <p>
+                This page demonstrates how fake "hacking tools"
+                often use animations and progress bars to appear convincing.
+                Always be cautious of websites claiming they can hack
+                social media accounts.
+                </p>
+            `;
+        }
+
+    }, 800);
+}
+
+</script>
+
+</body>
+</html>
